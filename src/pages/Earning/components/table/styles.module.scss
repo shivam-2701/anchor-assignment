@@ -1,0 +1,36 @@
+@import "../../../../config/theme.scss";
+
+.table {
+  box-sizing: border-box;
+  color: $font-primary;
+  background-color: $table-surface;
+  border-collapse: collapse;
+  &__wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  &__head {
+    background-color: $card-surface;
+    &__data {
+      padding: 1rem 2rem;
+      font-weight: bold;
+    }
+  }
+  &__body {
+    &__row {
+      &__data {
+        padding: 1rem 2rem;
+      }
+      &__image {
+        width: 2rem;
+        padding: 1rem 1rem;
+        img {
+          border-radius: 0.5rem;
+          overflow: hidden;
+          aspect-ratio: 16/9;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

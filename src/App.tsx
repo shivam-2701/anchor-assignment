@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, defer, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/Landing";
 import "./App.css";
 import EarningsPage from "./pages/Earning";
@@ -14,15 +14,12 @@ function App() {
     {
       path: "/earnings/:id",
       element: <EarningsPage />,
-      loader: ({ params }) => {
-        return axios
-          .post("/youtube-earning", {
+      loader: async ({ params }) => {
+        return defer({
+          promise: axios.post("/youtube-earning", {
             id: params.id,
-          })
-          .then((data) => {
-            return data;
-          })
-          .catch((err) => console.log(err));
+          }),
+        });
       },
     },
   ]);

@@ -1,5 +1,11 @@
+@import "../../config/theme.scss";
+
 .main {
   display: flex;
   flex-direction: column;
-  padding-inline: 9rem; //block 2.875rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  padding: 0rem 9rem; //block 2.875rem;
 }
