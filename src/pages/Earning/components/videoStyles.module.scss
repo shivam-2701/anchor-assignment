@@ -1,0 +1,93 @@
+.main {
+  display: flex;
+  padding: 1.25rem 2.5rem;
+  gap: 1.25rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  .infoVideo {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-grow: 1.25;
+    flex-basis: 0;
+    margin-left: 1.5rem;
+
+    .thumbnailInfo {
+      display: flex;
+      width: 15.875rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: start;
+      .rankBadge {
+        display: flex;
+        padding: 0.25rem 0.5rem;
+        align-items: center;
+        gap: 0.25rem;
+        border-radius: 0.25rem;
+        background: #707070;
+        color: white;
+      }
+      .thumbnail {
+        width: 15rem;
+        height: 8.4375rem;
+        border-radius: 0.625rem;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .uploadDate {
+        color: rgba(255, 255, 255, 0.5);
+        font-family: Inter;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    .desc {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      gap: 0.75rem;
+      h3 {
+        align-self: stretch;
+        text-overflow: ellipsis;
+        font-family: Inter;
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+      span {
+        color: rgba(255, 255, 255, 0.5);
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+  }
+  .earning {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 21.625rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    background: #282828;
+    padding: 40px 20px;
+    align-items: center;
+    justify-self: center;
+    margin-right: 3rem;
+    div {
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}

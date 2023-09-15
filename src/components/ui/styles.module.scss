@@ -1,0 +1,25 @@
+.button {
+  height: 48px;
+  display: flex;
+  padding: 1.125rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  border-radius: 5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.primary {
+  background-color: #ff2020;
+  color: #ffffff;
+  border: none;
+}
+.white {
+  border: none;
+  color: #121212;
+}
