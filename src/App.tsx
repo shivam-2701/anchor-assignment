@@ -3,9 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/Landing";
 import "./App.css";
 import EarningsPage from "./pages/Earning";
-import Modal from "./components/ui/Modal";
-import Card from "./components/ui/Card";
-import RequestForCallback from "./components/CallBack";
+import axios from "./config/axios";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,15 +14,22 @@ function App() {
     {
       path: "/earnings/:id",
       element: <EarningsPage />,
+      loader: ({ params }) => {
+        return axios
+          .post("/youtube-earning", {
+            id: params.id,
+          })
+          .then((data) => {
+            return data;
+          })
+          .catch((err) => console.log(err));
+      },
     },
   ]);
 
   return (
     <div className="App">
       <RouterProvider router={router} />
-      <Modal>
-        <RequestForCallback />
-      </Modal>
     </div>
   );
 }
