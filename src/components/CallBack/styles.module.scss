@@ -1,0 +1,70 @@
+@import "../../config/theme.scss";
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  justify-content: space-between;
+  aspect-ratio: 1.2/1;
+  &__body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+  &__icon {
+    font-size: 5rem;
+    color: $success;
+  }
+  &__button {
+    align-self: stretch;
+    &__icon {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+  &__description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.25rem;
+  }
+}
+
+.callback {
+  width: 30rem;
+  aspect-ratio: 1.2/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  &__form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 1rem;
+  }
+  &__input {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid $border-secondary;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    color: $font-secondary;
+    &::placeholder {
+      font-size: 1rem;
+    }
+    &:focus {
+      border-color: $font-secondary;
+    }
+  }
+  &__button {
+    text-transform: none;
+    padding: 0rem 3rem;
+  }
+}

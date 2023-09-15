@@ -1,3 +1,5 @@
+@import "../../config/theme.scss";
+
 .button {
   height: 48px;
   display: flex;
@@ -19,7 +21,41 @@
   color: #ffffff;
   border: none;
 }
+
 .white {
   border: none;
-  color: #121212;
+  background-color: $font-primary;
+  color: $card-surface;
+}
+
+.card {
+  padding: 4rem;
+  border-radius: 10px;
+  background-color: $card-surface;
+  color: $font-primary;
+}
+
+.modal {
+  display: grid;
+  position: fixed;
+  top: 0;
+  pointer-events: all;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $overlay;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $font-primary;
+}
+
+.subtitle {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: $font-secondary;
 }
