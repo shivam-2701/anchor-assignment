@@ -17,6 +17,16 @@ const Form = (props: Props) => {
     name: "",
     phoneNumber: "",
   });
+
+  const handleSubmit = () => {
+    const validation = new RegExp("^[0-9]+$");
+    if (
+      !validation.test(formData.phoneNumber) &&
+      formData.phoneNumber.length != 0
+    )
+      return;
+  };
+
   return (
     <Card className={styles.callback}>
       <Title>Request a call back</Title>
@@ -43,9 +53,11 @@ const Form = (props: Props) => {
             const validation = new RegExp("^[0-9]+$");
             if (
               !validation.test(event.target.value) &&
-              event.target.value.length != 0
+              event.target.value.length != 0 &&
+              event.target.value.length === 10
             )
               return;
+
             setFormData((prev) => {
               return { ...prev, phoneNumber: event.target.value };
             });
@@ -55,7 +67,7 @@ const Form = (props: Props) => {
       <Button
         type="white"
         className={styles.callback__button}
-        onClick={() => console.log(formData)}
+        onClick={handleSubmit}
       >
         Request a Call Back
       </Button>

@@ -10,7 +10,15 @@ const TableRow = ({ data }: Props) => {
   return (
     <tr className={styles.table__body__row}>
       <td className={styles.table__body__row__data}>{data.rank}</td>
-      <td className={styles.table__body__row__data}>{data.title}</td>
+      <td
+        className={
+          styles.table__body__row__data +
+          " " +
+          styles.table__body__row__data__title
+        }
+      >
+        {data.title}
+      </td>
       <td className={styles.table__body__row__image}>
         <img src={data.thumbnail} alt="thumbnail" />
       </td>

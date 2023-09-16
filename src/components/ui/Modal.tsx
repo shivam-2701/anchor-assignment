@@ -9,7 +9,7 @@ interface Props extends PropsWithChildren {
 const Modal = ({ children, className, onClick }: Props) => {
   return (
     <div className={`${styles.modal} ${className}`} onClick={onClick}>
-      {children}
+      <div onClick={(event) => event.stopPropagation()}>{children}</div>
     </div>
   );
 };

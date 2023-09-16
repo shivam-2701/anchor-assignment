@@ -14,12 +14,21 @@
     &__data {
       padding: 1rem 2rem;
       font-weight: bold;
+      // max-width: 8rem;
     }
   }
   &__body {
     &__row {
       &__data {
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 3rem;
         padding: 1rem 2rem;
+
+        &__title {
+          max-width: 6rem;
+        }
       }
       &__image {
         width: 2rem;
