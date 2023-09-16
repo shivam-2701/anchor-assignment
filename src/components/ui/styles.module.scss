@@ -27,6 +27,11 @@
   background-color: $font-primary;
   color: $card-surface;
 }
+.outline {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
 
 .card {
   padding: 4rem;

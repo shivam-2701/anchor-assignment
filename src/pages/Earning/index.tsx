@@ -6,7 +6,6 @@ import Modal from "../../components/ui/Modal";
 import RequestForCallback from "../../components/CallBack";
 import { useLoaderData, Await } from "react-router-dom";
 import Table from "./components/table";
-import { Video } from "../../models/Video";
 
 type Props = {};
 
@@ -24,7 +23,7 @@ const EarningsDate = (props: Props) => {
     <>
       {showModal && (
         <Modal onClick={() => setShowModal(false)}>
-          <RequestForCallback />
+          <RequestForCallback onCancel={() => setShowModal(false)} />
         </Modal>
       )}
 

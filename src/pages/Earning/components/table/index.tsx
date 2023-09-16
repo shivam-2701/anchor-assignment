@@ -16,7 +16,7 @@ const Table = (props: Props) => {
         <TableHeader />
         <tbody className={styles.table__body}>
           {videoList.map((video, idx) => (
-            <TableRow data={{ ...video, rank: idx + 1 }} />
+            <TableRow data={{ ...video, rank: idx + 1 }} key={idx} />
           ))}
         </tbody>
       </table>

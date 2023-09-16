@@ -1,30 +1,32 @@
-import React, { FormEventHandler, LegacyRef, useRef, useState } from "react";
+import React, { useState } from "react";
 import Card from "../ui/Card";
 import Title from "../ui/Title";
 import Button from "../ui/Button";
 
 import styles from "./styles.module.scss";
 
-type Props = {};
+type Props = {
+  onSubmit: (name: string, phone: string) => void;
+};
 
 interface FormData {
   name: string;
   phoneNumber: string;
 }
 
-const Form = (props: Props) => {
+const Form = ({ onSubmit }: Props) => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phoneNumber: "",
   });
 
+  const clearData = () => {
+    setFormData({ name: "", phoneNumber: "" });
+  };
+
   const handleSubmit = () => {
-    const validation = new RegExp("^[0-9]+$");
-    if (
-      !validation.test(formData.phoneNumber) &&
-      formData.phoneNumber.length != 0
-    )
-      return;
+    onSubmit(formData.name, formData.phoneNumber);
+    clearData();
   };
 
   return (
@@ -34,6 +36,7 @@ const Form = (props: Props) => {
         <input
           type="text"
           title="name"
+          maxLength={10}
           placeholder="Enter name"
           className={styles.callback__input}
           value={formData.name}
@@ -53,8 +56,8 @@ const Form = (props: Props) => {
             const validation = new RegExp("^[0-9]+$");
             if (
               !validation.test(event.target.value) &&
-              event.target.value.length != 0 &&
-              event.target.value.length === 10
+              event.target.value.length !== 0 &&
+              event.target.value.length >= 10
             )
               return;
 

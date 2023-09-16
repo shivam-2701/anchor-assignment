@@ -7,9 +7,11 @@ import Title from "../ui/Title";
 import styles from "./styles.module.scss";
 import Card from "../ui/Card";
 
-type Props = {};
+type Props = {
+  onCancel: () => void;
+};
 
-const Confirmation = (props: Props) => {
+const Confirmation = ({ onCancel }: Props) => {
   return (
     <Card className={styles.confirmation}>
       <FaRegCheckCircle className={styles.confirmation__icon} />
@@ -22,7 +24,7 @@ const Confirmation = (props: Props) => {
           <SubTitle>Can't you wait for call?</SubTitle>
         </div>
       </div>
-      <Button className={styles.confirmation__button}>
+      <Button className={styles.confirmation__button} onClick={onCancel}>
         Check another video
         <AiOutlineArrowRight className={styles.confirmation__button__icon} />
       </Button>
